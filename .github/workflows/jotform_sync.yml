@@ -38,4 +38,4 @@ jobs:
         env:
           JOTFORM_API_KEY: ${{ secrets.JOTFORM_API_KEY }}
         run: |
-          python vm_decommission_sync.py
+          python vm_req_jotform_data.py
