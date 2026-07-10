@@ -2,10 +2,10 @@ name: Jotform to Google Sheets Sync
 
 on:
   schedule:
-    # Runs every day at 10:00 AM IST (04:30 UTC)
+    # 10:00 AM IST
     - cron: "30 4 * * *"
 
-    # Runs every day at 5:00 PM IST (11:30 UTC)
+    # 5:00 PM IST
     - cron: "30 11 * * *"
 
   workflow_dispatch:
@@ -32,10 +32,11 @@ jobs:
         env:
           GOOGLE_CREDENTIALS_JSON: ${{ secrets.GOOGLE_CREDENTIALS_JSON }}
         run: |
-          echo "$GOOGLE_CREDENTIALS_JSON" > credentials.json
+          echo "$GOOGLE_CREDENTIALS_JSON" > quixotic-prism-502006-u3-86172ccb7319.json
 
       - name: Run Sync Script
         env:
+          GOOGLE_SHEET_ID: ${{ secrets.GOOGLE_SHEET_ID }}
           JOTFORM_API_KEY: ${{ secrets.JOTFORM_API_KEY }}
         run: |
           python vm_req_jotform_data.py
