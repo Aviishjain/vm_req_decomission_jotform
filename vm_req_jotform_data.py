@@ -6,11 +6,11 @@ from google.oauth2.service_account import Credentials
 # ============================================================
 # CONFIGURATION
 # ============================================================
-GOOGLE_SHEET_ID = "1BsGivltxhek8XU7_Y9thIbgKq5gT6qOIpAgzmGeF7qw"
+GOOGLE_SHEET_ID = os.environ["GOOGLE_SHEET_ID"]
 WORKSHEET_NAME = "Sheet1"
 GOOGLE_CREDENTIALS_FILE = "quixotic-prism-502006-u3-86172ccb7319.json"
 
-JOTFORM_API_KEY = "7faf95bb2a0478ba5f99dd054416159c"
+JOTFORM_API_KEY = os.environ["JOTFORM_API_KEY"]
 FORM_ID = "251590768630059"
 
 PAGE_SIZE = 100
